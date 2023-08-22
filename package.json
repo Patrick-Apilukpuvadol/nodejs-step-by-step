@@ -4,10 +4,12 @@
   "description": "\"Some cool descriptive description about the project.\",",
   "main": "app.js",
   "scripts": {
-      "test": "jest",
-      "start-dev":"NODE_ENV=development API_KEY=blahblahblah node app.js",
-      "start-prod":"NODE_ENV=production API_KEY=blahblahblah node app.js",
-      "roll-twice":"ROLL_COUNT=2 node app.js"
+    "test": "jest",
+    "start-dev": "NODE_ENV=development API_KEY=blahblahblah node app.js",
+    "start-prod": "NODE_ENV=production API_KEY=blahblahblah node app.js",
+    "roll-twice": "ROLL_COUNT=2 node app.js",
+    "someRandomCommand": "echo \" Hello world \"",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,11 @@
     "}"
   ],
   "author": "Coder Academy",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }
