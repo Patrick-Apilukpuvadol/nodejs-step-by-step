@@ -1,0 +1,21 @@
+{
+  "name": "nodejsintro",
+  "version": "1.0.0",
+  "description": "\"Some cool descriptive description about the project.\",",
+  "main": "app.js",
+  "scripts": {
+      "test": "jest",
+      "start-dev":"NODE_ENV=development API_KEY=blahblahblah node app.js",
+      "start-prod":"NODE_ENV=production API_KEY=blahblahblah node app.js",
+      "roll-twice":"ROLL_COUNT=2 node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ":\"node app.js\","
+  },
+  "keywords": [
+    "}"
+  ],
+  "author": "Coder Academy",
+  "license": "ISC"
+}
