@@ -9,7 +9,9 @@
     "start-prod": "NODE_ENV=production API_KEY=blahblahblah node app.js",
     "roll-twice": "ROLL_COUNT=2 node app.js",
     "someRandomCommand": "echo \" Hello world \"",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev":"nodemon index.js",
+    "devPromptSync":"CHOKIDAR_USEPOLLING=true nodemon --no-stdin index.js"
   },
   "repository": {
     "type": "git",

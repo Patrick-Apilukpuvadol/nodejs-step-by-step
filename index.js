@@ -9,6 +9,10 @@ let userEnteredNumber = false;
 do {
 	let userInput = promptInstance("What is the coolest number in the universe?");
 
+	if (!parseInt(userInput) && !parseFloat(userInput)){
+		throw "User did not enter a number";
+	}
+
 
 	if (userInput ==42){
 	console.log("The universe thanks you for figuring out the answer!!");
@@ -32,3 +36,4 @@ do {
 // for (const message of messagesToShare) {
 // 	helloWorld(message);
 // }
+
