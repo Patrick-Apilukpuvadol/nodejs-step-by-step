@@ -3,6 +3,24 @@ const promptInstance = promptSync({
 	sigint: true // allows CTRL+C to exit the app
 });
 
+
+class SomeCustomError extends Error {
+	constructor(message = "Some error happened, write a better message lol"){
+		super();
+
+		this.statusCode = 404;
+
+		this.message = message;
+	}
+}
+
+function app(){
+	const promptSync = require('prompt-sync');
+	const promptInstance = promptSync({
+		sigint: true // allows CTRL+C to exit the app
+	});
+
+
 let userInput = null;
 let userEnteredNumber = false;
 
@@ -21,6 +39,22 @@ do {
 	console.log("The universe seems unfulfilled... ");
 	}
 } while (!userEnteredNumber);
+
+}
+
+try {
+	app();
+	console.log("app executed successfully");
+} catch (error) {
+	if (error.statusCode){
+		console.log(`Error${error.statusCode}, its message is: ${error.message}`);
+	} else {
+		console.log("An error occurred" + error.message);
+	}
+
+} finally {
+	console.log("App has finished running. Pretend there's nice DB closing code here.")
+}
 // helloWorld(userInput);
 
 
