@@ -1,4 +1,4 @@
-const {rollDice} = require('../src/diceRolling');
+const {rollDice, rollDiceWithDisadvantage, rollDiceWithAdvantage} = require('../src/diceRolling');
 
 beforeEach(() => {
 	console.log("message runs before each individual test()");
@@ -31,9 +31,41 @@ describe("Casual tabletop gamer...", () => {
 describe("Tabletop RPG gamer...", () => {
 	test("...wants to roll a D20 with advantage and see both roll results as well as the best roll.", () => {
 
+        let rollResult = rollDiceWithAdvantage(20);
+        // console.log("rollResult = /n" + rollResult.finalResult + "," + rollResult.rolls);
+        console.log("Roll result: /n" + JSON.stringify(rollResult, null, 4));
+
+
+        expect(rollResult.finalResult).toBeGreaterThan(0);
+        expect(rollResult.finalResult).toBeLessThanOrEqual(20);
+
+        expect(rollResult.rolls).toHaveLength(2);
+        expect(rollResult.rolls).toContain(rollResult.finalResult);
+        let sortedRolls = [...rollResult.rolls].sort();
+        // expect(rollResult.rolls[0] > rollResult.rolls[1] || rollResult.rolls[0] < rollResult.rolls[1]).toBe(true);
+        expect(sortedRolls[0]).toBeGreaterThanOrEqual(sortedRolls[1]);
+
 	});
 
+    // let rollDiceWithDisadvantage = jest.fn().mockReturnValue({
+    //     finalResult: 1,
+    //     rolls: [
+    //         1, 20
+    //     ]
+    // });
+
 	test("...wants to roll a D20 with disadvantage and see both roll results as well as the worst roll.", () => {
+
+        let rollResult = rollDiceWithDisadvantage(20);
+        // console.log("rollResult = /n" + rollResult.finalResult + "," + rollResult.rolls);
+        console.log("Roll result: /n" + JSON.stringify(rollResult, null, 4));
+
+
+        expect(rollResult.finalResult).toBeGreaterThan(0);
+        expect(rollResult.finalResult).toBeLessThanOrEqual(20);
+
+        expect(rollResult.rolls).toHaveLength(2);
+        expect(rollResult.rolls).toContain(rollResult.finalResult);
 
 	});
 

@@ -10,8 +10,8 @@
     "roll-twice": "ROLL_COUNT=2 node app.js",
     "someRandomCommand": "echo \" Hello world \"",
     "start": "node index.js",
-    "dev":"nodemon index.js",
-    "devPromptSync":"CHOKIDAR_USEPOLLING=true nodemon --no-stdin index.js"
+    "dev": "nodemon index.js",
+    "devPromptSync": "CHOKIDAR_USEPOLLING=true nodemon --no-stdin index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "nodemon": "^3.0.1"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "prompt-sync": "^4.2.0"
   }
 }
